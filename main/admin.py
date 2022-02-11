@@ -1,3 +1,9 @@
 from django.contrib import admin
+from .models import MainBlock
+from modeltranslation.admin import TranslationAdmin
 
-# Register your models here.
+
+@admin.register(MainBlock)
+class MainBlockAdmin(TranslationAdmin):
+    list_display = ("display", )
+    readonly_fields = ("display", )
