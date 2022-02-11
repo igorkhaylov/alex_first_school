@@ -1,0 +1,5 @@
+.idea/
+venv/
+__pycache__
+media/
+alex_first_school/prod_settings.py
