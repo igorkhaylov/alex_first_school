@@ -1,5 +1,5 @@
 from modeltranslation.translator import register, TranslationOptions
-from .models import MainBlock
+from .models import MainBlock, News, Slider, Teachers, Questions
 
 
 @register(MainBlock)
@@ -8,3 +8,24 @@ class MainBlockTranslationOptions(TranslationOptions):
               'about_school_text_2',
               'history_of_school',
               )
+
+
+@register(News)
+class NewsTranslationOptions(TranslationOptions):
+    fields = ('text', )
+
+
+@register(Slider)
+class SliderTranslationOptions(TranslationOptions):
+    fields = ("title", "subtitle", "text")
+
+
+@register(Teachers)
+class TeachersTranslationOptions(TranslationOptions):
+    fields = ("name", "description")
+
+
+@register(Questions)
+class QuestionsTranslationOptions(TranslationOptions):
+    fields = ("question", "answer")
+

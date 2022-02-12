@@ -13,9 +13,9 @@ SECRET_KEY = 'django-insecure-o**or2#t8e*ef2o)($k3y@+0ip-0$_^$-@j#4z9b2#3c&ne_%o
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-from . import prod_settings
+from .prod_settings import *
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["first-school.lcode.uz", "*"]
 
 
 # Application definition
@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main.apps.MainConfig',
+    'sorl.thumbnail',
 ]
 
 MIDDLEWARE = [
@@ -73,7 +74,6 @@ WSGI_APPLICATION = 'alex_first_school.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators

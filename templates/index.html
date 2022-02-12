@@ -1,4 +1,4 @@
-{% load static i18n %}
+{% load static i18n thumbnail %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,14 +41,14 @@
                     <div class="uz">
                         <a href=/uz class="language__link header__link">UZ</a>
                     </div>
-                    {% else %}
-                <div class="ru">
-                    <a href="/ru" class="language__link header__link">RU</a>
-                </div>
-                <div class="stick"></div>
-                <div class="uz">
-                    <a href=/uz class="language_active language__link">UZ</a>
-                </div>
+                {% else %}
+                    <div class="ru">
+                        <a href="/ru" class="language__link header__link">RU</a>
+                    </div>
+                    <div class="stick"></div>
+                    <div class="uz">
+                        <a href=/uz class="language_active language__link">UZ</a>
+                    </div>
 
                 {% endif %}
 
@@ -68,7 +68,7 @@
 </div>
 <section class="onescreen" id="onescreen">
     <div class="videoBackground">
-        <video src="./videos/Intro.mp4" muted autoplay></video>
+        <video src="{% static "videos/Intro.mp4" %}" muted autoplay></video>
     </div>
     <div class="container">
         <div class="onescreen-content">
@@ -88,23 +88,25 @@
         <div class="about-content">
             <div class="content-item">
                 <div class="content-text">
-                    <span class="green">В течение последних лет</span> уделяется большое внимание трудовому и
-                    профессиональному обучению учащихся с ограниченными умственными возможностями, подготовки их
-                    самостоятельной жизни социализации в обществе и приобретению практических трудовых навыков и
-                    профессий принося щих пользу своим семьям и государству.
+                    {{ main_block.about_school_text_1|safe }}
+                    {#                    <span class="green">В течение последних лет</span> уделяется большое внимание трудовому и#}
+                    {#                    профессиональному обучению учащихся с ограниченными умственными возможностями, подготовки их#}
+                    {#                    самостоятельной жизни социализации в обществе и приобретению практических трудовых навыков и#}
+                    {#                    профессий принося щих пользу своим семьям и государству.#}
                 </div>
                 <div class="content-img">
-                    <img src="./img/2.jpg" alt="about1"/>
+                    <img src="{{ main_block.about_school_picture_1.url }}" alt="about1"/>
                 </div>
             </div>
             <div class="content-item">
                 <div class="content-img">
-                    <img src="./img/1.jpg" alt="about1"/>
+                    <img src="{{ main_block.about_school_picture_2.url }}" alt="about1"/>
                 </div>
                 <div class="content-text">
-                    <span class="green">Во второй половине дня</span> в школе работает 14 кружков по интересам,которые
-                    проводят воспитатели ГПД. Так же проводятся кружки, которые увеличивают интерес к учебному предмету
-                    и улучшают качество знаний учащихся.
+                    {{ main_block.about_school_text_2|safe }}
+                    {#                    <span class="green">Во второй половине дня</span> в школе работает 14 кружков по интересам,которые#}
+                    {#                    проводят воспитатели ГПД. Так же проводятся кружки, которые увеличивают интерес к учебному предмету#}
+                    {#                    и улучшают качество знаний учащихся.#}
                 </div>
             </div>
         </div>
@@ -116,49 +118,67 @@
         <div class="container">
             <h2 class="title">{% trans "История школы" %}</h2>
             <p class="text">
-                Год основания - 1982. За годы существования школы было произведено 37 выпусков учащихся школы. В 2016
-                году школа переведена в новое здание по адресу улица Наиман, дом 26.
+                {{ main_block.history_of_school }}
+                {#                Год основания - 1982. За годы существования школы было произведено 37 выпусков учащихся школы. В 2016#}
+                {#                году школа переведена в новое здание по адресу улица Наиман, дом 26.#}
             </p>
         </div>
     </div>
 </section>
+
 <div id="news"><br>
     <br><br></div>
+
 <section class="news">
     <div class="container">
         <div class="top">
-            <h2 class="title">Новости</h2>
-            <h3 class="changedData">Обновлено 19.01.2022</h3>
+            <h2 class="title">{% trans "Новости" %}</h2>
+            <h3 class="changedData">{% trans "Обновлено" %} {{ last_updated.date_created|date:"d.m.Y" }}</h3>
         </div>
         <div class="news-items">
-            <div class="news-item">
-                <img src="./img/Rectangle 10new1.jpg" alt="firstNew"/>
-                <p class="itemData">20.01.2022</p>
-                <p class="item-text">
-                    It is a long established fact that a reader will be distracted by
-                    the readable content of a page when looking at its layout. The
-                    point of using Loremke readable Eng
-                </p>
-            </div>
-            <div class="news-item">
-                <img src="./img/Rectangle 10new1.jpg" alt="secondNew"/>
-                <p class="itemData">20.01.2022</p>
-                <p class="item-text">
-                    It is a long established fact that a reader will be distracted by
-                    the readable content of a page when looking at its layout. The
-                    point of using Loremke readable Eng
-                </p>
-            </div>
-            <div class="news-item">
-                <img src="./img/Rectangle 10new1.jpg" alt="therdNew"/>
-                <p class="itemData">20.01.2022</p>
 
+            {% for new in news %}
+
+            <div class="news-item">
+
+                {% thumbnail new.picture "500x600" crop="center" quality=90 as im %}
+{#                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">#}
+                    <img src="{{ im.url }}" alt="firstNew"/>
+                {% endthumbnail %}
+{#                <img src="{{ new.picture.url }}" alt="firstNew"/>#}
+                <p class="itemData">{{ new.date_created|date:"d.m.Y" }}</p>
                 <p class="item-text">
-                    It is a long established fact that a reader will be distracted by
-                    the readable content of a page when looking at its layout. The
-                    point of using Loremke readable Eng
+                    {{ new.text }}
+
+{#                    It is a long established fact that a reader will be distracted by#}
+{#                    the readable content of a page when looking at its layout. The#}
+{#                    point of using Loremke readable Eng#}
                 </p>
             </div>
+
+            {% endfor %}
+
+
+{#            <div class="news-item">#}
+{#                <img src="{% static "img/Rectangle 10new1.jpg" %}" alt="secondNew"/>#}
+{#                <p class="itemData">20.01.2022</p>#}
+{#                <p class="item-text">#}
+{#                    It is a long established fact that a reader will be distracted by#}
+{#                    the readable content of a page when looking at its layout. The#}
+{#                    point of using Loremke readable Eng#}
+{#                </p>#}
+{#            </div>#}
+{##}
+{#            <div class="news-item">#}
+{#                <img src="{% static "img/Rectangle 10new1.jpg" %}" alt="therdNew"/>#}
+{#                <p class="itemData">20.01.2022</p>#}
+{##}
+{#                <p class="item-text">#}
+{#                    It is a long established fact that a reader will be distracted by#}
+{#                    the readable content of a page when looking at its layout. The#}
+{#                    point of using Loremke readable Eng#}
+{#                </p>#}
+{#            </div>#}
         </div>
     </div>
 </section>
@@ -173,61 +193,29 @@
             --swiper-pagination-color: #fff;
           " class="swiper mySwiper">
             <div class="parallax-bg" style="
-              background-image: url(./img/slider.jpg);
+              background-image: url({{ main_block.slider_picture.url }});
             " data-swiper-parallax="-23%"></div>
             <div class="swiper-wrapper">
+
+                {% for slider in sliders %}
+
                 <div class="swiper-slide">
                     <div class="title" data-swiper-parallax="-300">
-                        Выступление 3Б класса на утреннике
+                        {{ slider.title }}
+{#                        Выступление 3Б класса на утреннике#}
                     </div>
                     <div class="subtitle" data-swiper-parallax="-200">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry. Lorem Ipsum has been the industry's standard dummy
-                        text ever since the
+                        {{ slider.subtitle }}
                     </div>
                     <div class="text" data-swiper-parallax="-100">
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the industry's
-                            standard dummy text ever since the . Lorem Ipsum is simply
-                            dummy text of the printing and typesetting industry. Lorem
-                            Ipsum has been the industry's standard dummy text ever since
-                            the
+                            {{ slider.text }}
                         </p>
                     </div>
                 </div>
-                <div class="swiper-slide">
-                    <div class="title" data-swiper-parallax="-300">Slide 2</div>
-                    <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
-                    <div class="text" data-swiper-parallax="-100">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Aliquam dictum mattis velit, sit amet faucibus felis iaculis
-                            nec. Nulla laoreet justo vitae porttitor porttitor.
-                            Suspendisse in sem justo. Integer laoreet magna nec elit
-                            suscipit, ac laoreet nibh euismod. Aliquam hendrerit lorem at
-                            elit facilisis rutrum. Ut at ullamcorper velit. Nulla ligula
-                            nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean
-                            feugiat non eros quis feugiat.
-                        </p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="title" data-swiper-parallax="-300">Slide 3</div>
-                    <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
-                    <div class="text" data-swiper-parallax="-100">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Aliquam dictum mattis velit, sit amet faucibus felis iaculis
-                            nec. Nulla laoreet justo vitae porttitor porttitor.
-                            Suspendisse in sem justo. Integer laoreet magna nec elit
-                            suscipit, ac laoreet nibh euismod. Aliquam hendrerit lorem at
-                            elit facilisis rutrum. Ut at ullamcorper velit. Nulla ligula
-                            nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean
-                            feugiat non eros quis feugiat.
-                        </p>
-                    </div>
-                </div>
+
+                {% endfor %}
+
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
@@ -239,33 +227,33 @@
         <div class="top">
             <div class="item">
                 <div class="count">
-                    <h2 class="count_number">150</h2>
-                    <h2 class="doing">Учатся в нашей школе</h2>
+                    <h2 class="count_number">{{ main_block.student_counter }}</h2>
+                    <h2 class="doing">{% trans "Учатся в нашей школе" %}</h2>
                 </div>
-                <span class="who three"> Учеников </span>
+                <span class="who three">{% trans "Учеников" %}  </span>
             </div>
             <div class="item">
                 <div class="count">
-                    <h2 class="count_number">46</h2>
-                    <h2 class="doing">Учат в нашей школе</h2>
+                    <h2 class="count_number">{{ main_block.teacher_counter }}</h2>
+                    <h2 class="doing">{% trans "Учат в нашей школе" %}</h2>
                 </div>
-                <span class="who"> Педагогов </span>
+                <span class="who">{% trans "Педагогов" %}  </span>
             </div>
         </div>
         <div class="bottom">
             <div class="item">
                 <div class="count">
-                    <h2 class="count_number">40</h2>
-                    <h2 class="doing">Есть в нашей школе</h2>
+                    <h2 class="count_number">{{ main_block.cabinet_counter }}</h2>
+                    <h2 class="doing">{% trans "Есть в нашей школе" %}</h2>
                 </div>
-                <span class="who"> Кабинетов </span>
+                <span class="who">{% trans "Кабинетов" %}</span>
             </div>
             <div class="item">
                 <div class="count">
-                    <h2 class="count_number">10</h2>
-                    <h2 class="doing">Программ обучения</h2>
+                    <h2 class="count_number">{{ main_block.program_counter }}</h2>
+                    <h2 class="doing">{% trans "Программ обучения" %}</h2>
                 </div>
-                <span class="who"> Программ </span>
+                <span class="who"> {% trans "Программ" %} </span>
             </div>
         </div>
     </div>
@@ -274,165 +262,98 @@
 <section class="teachers">
     <div class="container">
         <h2 class="title">
-            Наши <br/>
-            педагоги
+
+            {% trans "Наши <br/> педагоги" %}
+
         </h2>
+
         <div class="items">
+
+            {% for teacher in teachers %}
+
             <div class="item">
                 <div class="item-img">
-                    <img src="./img/teacher1.jpg" alt="teacher"/>
+                    <img src="{{ teacher.picture.url }}" alt="teacher"/>
                 </div>
                 <div class="text">
                     <div class="name">
-                        <h2>Вафаева Олеся Васильевна</h2>
+                        <h2>{{ teacher.name }}</h2>
                     </div>
                     <div class="discription">
                         <p>
-                            Дефектолог, воспитатель ГПД
+                           {{ teacher.description }}
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="item">
-                <div class="item-img">
-                    <img src="./img/teacher2.jpg" alt="teacher"/>
-                </div>
-                <div class="text">
-                    <div class="name">
-                        <h2>Азизова Райхон Хафизовна</h2>
-                    </div>
-                    <div class="discription">
-                        <p>
-                            Олигофрено-педагог, воспитатель ГПД
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="item-img">
-                    <img src="./img/teacher3.jpg" alt="teacher"/>
-                </div>
-                <div class="text">
-                    <div class="name">
-                        <h2>Шаджалилова Адиба Шавкатовна</h2>
-                    </div>
-                    <div class="discription">
-                        <p>
-                            Дефектолог, учитель начальных классов
-                        </p>
-                    </div>
-                </div>
-            </div>
+
+            {% endfor %}
+
         </div>
     </div>
 </section>
 <div id="questions"></div>
 <section class="questions">
     <div class="container">
-        <h2 class="title">Частые вопросы</h2>
+        <h2 class="title">{% trans "Частые вопросы" %}</h2>
         <div class="questions-wrapper one">
+
+
+
+            {% for question in questions %}
+
             <div class="question">
                 <div class="line">
-                    <img src="./img/Arrow 1stick.svg" alt="line">
+                    <img src="{% static "img/Arrow 1stick.svg" %}" alt="line">
                 </div>
                 <div class="questions-content">
                     <div class="qustion">
-                        <h2 class="green">Что обозначает "Школа VIII-вида" ?</h2>
+                        <h2 class="green">{{ question.question }}</h2>
                         <p class="answer">
-                            В Узбекистане существует 8-видов Специализированных образовательных учреждений для детей с
-                            особыми образовательными потребностями. VIII-вид-для детей с ограниченными умственными
-                            возможностями.
+                            {{ question.answer }}
+{#                            В Узбекистане существует 8-видов Специализированных образовательных учреждений для детей с#}
+{#                            особыми образовательными потребностями. VIII-вид-для детей с ограниченными умственными#}
+{#                            возможностями.#}
                         </p>
                     </div>
                     <div class="answer-button"></div>
                 </div>
                 <div class="line">
-                    <img src="./img/Arrow 1stick.svg" alt="line">
+                    <img src="{% static "img/Arrow 1stick.svg" %}" alt="line">
                 </div>
             </div>
-            <div class="question">
-                <div class="line">
-                    <img src="./img/Arrow 1stick.svg" alt="line">
-                </div>
-                <div class="questions-content">
-                    <div class="qustion">
-                        <h2 class="green">Как проводится приём детей в школу ?</h2>
-                        <p class="answer">
-                            Дети принимаются в школу по направлению Областной Медикопсихолопедагогической комиссии до
-                            начала учебного года.
-                        </p>
-                    </div>
-                    <div class="answer-button"></div>
-                </div>
-                <div class="line">
-                    <img src="./img/Arrow 1stick.svg" alt="line">
-                </div>
-            </div>
-            <div class="question">
-                <div class="line">
-                    <img src="./img/Arrow 1stick.svg" alt="line">
-                </div>
-                <div class="questions-content">
-                    <div class="qustion">
-                        <h2 class="green">Какие специалисты работают с такими детьми ?</h2>
-                        <p class="answer">
-                            Образовательный процесс.
-                        </p>
-                    </div>
-                    <div class="answer-button"></div>
-                </div>
-                <div class="line">
-                    <img src="./img/Arrow 1stick.svg" alt="line">
-                </div>
-            </div>
-            <div class="question">
-                <div class="line">
-                    <img src="./img/Arrow 1stick.svg" alt="line">
-                </div>
-                <div class="questions-content">
-                    <div class="qustion">
-                        <h2 class="green">Какова профессиональность учителей в школе?</h2>
-                        <p class="answer">
-                            Квалификация на высшем уровне и мы гарантируем качество
-                            занятий!
-                        </p>
-                    </div>
-                    <div class="answer-button"></div>
-                </div>
-                <div class="line">
-                    <img src="./img/Arrow 1stick.svg" alt="line">
-                </div>
-            </div>
+
+            {% endfor %}
+
         </div>
     </div>
 </section>
 <div id="contacts"></div>
 <section class="contacts">
     <div class="container">
-        <h2 class="title green">Контакты</h2>
+        <h2 class="title green">{% trans "Контакты" %}</h2>
         <h3 class="subtitle">
-            Остались вопросы? оставьте свои данные чтобы мы могли связаться с вами
-            и ответить на ваши вопросы!
+            {% trans "Остались вопросы? оставьте свои данные чтобы мы могли связаться с вами и ответить на ваши вопросы!" %}
         </h3>
         <div class="contacts-items">
             <div class="left-items">
                 <div class="container">
-                    <form action="#">
-                        <input type="text" placeholder="Введите ваше имя" class="block name input"/>
-                        <input type="email" placeholder="Введите ваш email" class="block input"/>
-                        <input type="text" placeholder="Введите ваш номер" class="block input"/>
-                        <textarea name="comment" id="" cols="30" rows="10" class="block comment"
-                                  placeholder="Введите ваше сообщение"></textarea>
+                    <form action="">
+                        <input type="text" placeholder="{% trans "Введите ваше имя" %}" class="block name input" required/>
+                        <input type="email" placeholder="{% trans "Введите ваш email" %}" class="block input" required/>
+                        <input type="text" placeholder="{% trans "Введите ваш номер" %}" class="block input" required/>
+                        <textarea name="comment" id="" cols="30" rows="10" class="block comment" required
+                                  placeholder="{% trans "Введите ваше сообщение" %}"></textarea>
                         <div class="buttons">
-                            <input type="submit" value="Подтввердить" class="button"/>
-                            <button type="reset" class="button">Отменить</button>
+                            <input type="submit" value="{% trans "Подтвердить" %}" class="button"/>
+                            <button type="reset" class="button">{% trans "Отменить" %}</button>
                         </div>
                     </form>
                 </div>
             </div>
             <div class="right-items">
                 <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d379.49236577488296!2d66.93232719014259!3d39.65718217991775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sru!2s!4v1642359686573!5m2!1sru!2s"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d946.8997332347191!2d66.93174452924886!3d39.65703403120384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4d198e4c1646a7%3A0x440fb2d4c755c63d!2z0KHQv9C10YbQuNCw0LvQuNC30LjRgNC-0LLQsNC90L3QsNGPIMKr0LrQvtGA0YDQtdC60YbQuNC-0L3QvdCw0Y_CuyDRiNC60L7Qu9CwINC90L7QvNC10YAgMSAoVklJSSkg0LLQvtGB0YzQvNC-0LPQviDQstC40LTQsCDQs9C-0YDQvtC00LAg0KHQsNC80LDRgNC60LDQvdC00LA!5e1!3m2!1sru!2s!4v1644646933225!5m2!1sru!2s"
                         class="map" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
@@ -441,10 +362,10 @@
 <footer class="footer">
     <div class="container">
         <div class="title">
-            <img src="./img/school4.png" alt="logo" class="logo"/>
+            <img src="{% static "img/school4.png" %}" alt="logo" class="logo"/>
             <h2>
-                Специализированная «коррекционная» школа номер 1 (VIII) восьмого
-                вида города самарканда
+                {% trans "Специализированная «коррекционная» школа номер 1 (VIII) восьмого вида города самарканда" %}
+
             </h2>
         </div>
         <div class="links">
@@ -463,7 +384,7 @@
             <div class="bottom">
                 <div class="documentation">
                     <a href="#" class="footer__link">Политика конфеденциальности</a>
-                    <a href="http://lcode.uz/" class="footer__link">Сайт разработан в 2022 году <br> by liberty code</a>
+                    <a href="https://lcode.uz/" class="footer__link">Сайт разработан в 2022 году <br> by liberty code</a>
                 </div>
                 <div class="adress">
                     <p class="footer__link">улица Наиман 26<br> ориентир: институт сельхоз</p>
