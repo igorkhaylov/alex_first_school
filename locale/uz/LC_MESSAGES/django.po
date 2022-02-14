@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-11 23:53+0500\n"
+"POT-Creation-Date: 2022-02-14 15:47+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "О нас"
 msgstr "About Us"
 
-#: .\templates\index.html:25
+#: .\templates\index.html:25 .\templates\index.html:135
 msgid "Новости"
 msgstr "News"
 
@@ -38,7 +38,7 @@ msgstr "Teachers"
 msgid "Вопросы"
 msgstr "Questions"
 
-#: .\templates\index.html:29
+#: .\templates\index.html:29 .\templates\index.html:334
 msgid "Контакты"
 msgstr "Contacts"
 
@@ -60,6 +60,96 @@ msgstr ""
 
 #: .\templates\index.html:87
 msgid "О школе"
+msgstr ""
+
+#: .\templates\index.html:119
+msgid "История школы"
+msgstr ""
+
+#: .\templates\index.html:136
+msgid "Обновлено"
+msgstr ""
+
+#: .\templates\index.html:231
+msgid "Учатся в нашей школе"
+msgstr ""
+
+#: .\templates\index.html:233
+msgid "Учеников"
+msgstr ""
+
+#: .\templates\index.html:238
+msgid "Учат в нашей школе"
+msgstr ""
+
+#: .\templates\index.html:240
+#, fuzzy
+#| msgid "Педагоги"
+msgid "Педагогов"
+msgstr "Teachers"
+
+#: .\templates\index.html:247
+msgid "Есть в нашей школе"
+msgstr ""
+
+#: .\templates\index.html:249
+msgid "Кабинетов"
+msgstr ""
+
+#: .\templates\index.html:254
+msgid "Программ обучения"
+msgstr ""
+
+#: .\templates\index.html:256
+msgid "Программ"
+msgstr ""
+
+#: .\templates\index.html:266
+#, fuzzy
+#| msgid "Педагоги"
+msgid "Наши <br/> педагоги"
+msgstr "Teachers"
+
+#: .\templates\index.html:298
+#, fuzzy
+#| msgid "Вопросы"
+msgid "Частые вопросы"
+msgstr "Questions"
+
+#: .\templates\index.html:336
+msgid ""
+"Остались вопросы? оставьте свои данные чтобы мы могли связаться с вами и "
+"ответить на ваши вопросы!"
+msgstr ""
+
+#: .\templates\index.html:342
+msgid "Введите ваше имя"
+msgstr ""
+
+#: .\templates\index.html:343
+msgid "Введите ваш email"
+msgstr ""
+
+#: .\templates\index.html:344
+msgid "Введите ваш номер"
+msgstr ""
+
+#: .\templates\index.html:346
+msgid "Введите ваше сообщение"
+msgstr ""
+
+#: .\templates\index.html:348
+msgid "Подтвердить"
+msgstr ""
+
+#: .\templates\index.html:349
+msgid "Отменить"
+msgstr ""
+
+#: .\templates\index.html:367
+msgid ""
+"Специализированная «коррекционная» школа номер 1 (VIII) восьмого вида города "
+"самарканда"
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:7
