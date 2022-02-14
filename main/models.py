@@ -63,7 +63,7 @@ class Teachers(models.Model):
     class Meta:
         verbose_name = "Учитель"
         verbose_name_plural = "Учителя"
-        ordering = ["-id", ]
+        ordering = ["id", ]
 
 
 class Questions(models.Model):
