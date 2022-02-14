@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponseRedirect
+from django.shortcuts import render, HttpResponseRedirect, redirect
 from .models import MainBlock, News, Slider, Teachers, Questions
 from django.core.mail import send_mail
 
@@ -20,6 +20,7 @@ def index(request):
               "\n\n\tE-mail отправителя: \n" + email + \
               "\n\n\tНомер телефона: \n" + phone_number + \
               "\n\n\tСообщение: \n" + text
+        print(mes)
 
         mail = send_mail('First-School', mes, 'totpravka@gmail.com',
                          ['igorkhaylov@yandex.com', ], fail_silently=False, )
@@ -32,7 +33,8 @@ def index(request):
         # return HttpResponseRedirect()
 
         # return render(request, "main/contact-us.html")
-        return HttpResponseRedirect("/")
+        # return HttpResponseRedirect("/")
+        return redirect("index")
     return render(request, "index.html", {"main_block": main_block,
                                           "news": news,
                                           "last_updated": last_updated,
