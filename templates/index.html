@@ -338,7 +338,8 @@
         <div class="contacts-items">
             <div class="left-items">
                 <div class="container">
-                    <form action="">
+                    <form action="/" method="post">
+                        {% csrf_token %}
                         <input name="name" type="text" placeholder="{% trans "Введите ваше имя" %}" class="block name input" required/>
                         <input name="email" type="email" placeholder="{% trans "Введите ваш email" %}" class="block input" required/>
                         <input type="phone" placeholder="{% trans "Введите ваш номер" %}" class="block input" required/>
