@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponseRedirect
 from .models import MainBlock, News, Slider, Teachers, Questions
+from django.core.mail import send_mail
 
 
 def index(request):
@@ -10,6 +11,28 @@ def index(request):
     questions = Questions.objects.all()
 
     last_updated = News.objects.first()
+    if request.method == "POST":
+        name = request.POST["name"]
+        email = request.POST["email"]
+        phone_number = request.POST["phone"]
+        text = request.POST["comment"]
+        mes = "\tИмя отправителя: \n" + name + \
+              "\n\n\tE-mail отправителя: \n" + email + \
+              "\n\n\tНомер телефона: \n" + phone_number + \
+              "\n\n\tСообщение: \n" + text
+
+        mail = send_mail('First-School', mes, 'totpravka@gmail.com',
+                         ['igorkhaylov@yandex.com', ], fail_silently=False, )
+        if mail:
+            print("Сообщение успешно отправлено")
+        else:
+            print("Ошибка отправки сообщения")
+
+        # print(request)
+        # return HttpResponseRedirect()
+
+        # return render(request, "main/contact-us.html")
+        return HttpResponseRedirect("/")
     return render(request, "index.html", {"main_block": main_block,
                                           "news": news,
                                           "last_updated": last_updated,
