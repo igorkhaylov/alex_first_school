@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-17 22:54+0500\n"
+"POT-Creation-Date: 2022-02-17 23:31+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,8 +39,7 @@ msgstr "O`qituvchilar"
 msgid "Вопросы"
 msgstr "Savollar"
 
-#: .\templates\index.html:29 .\templates\index.html:298
-#: .\templates\index.html:346
+#: .\templates\index.html:29 .\templates\index.html:346
 msgid "Контакты"
 msgstr "Raqamlar"
 
@@ -49,8 +48,10 @@ msgid ""
 "Специализированная <span class='green'>“коррекционная”</span> <br/> школа "
 "номер 1 (VIII) восьмого вида города <br/> Самарканда"
 msgstr ""
-"Ixtisoslashgan <span class='green'>“Rivojlantirish”</span> <br/> maktabi "
-"samarqand shahrining sakkizinchi ko‘rinishining <br/> 1 (VIII) raqami"
+"Samarqand shahrining (VII)sakkizinchi ko`rinishdagi ixtisoslashgan <span "
+"class='green'>\"Rivojlantirish\"</span> <br/> ga qaratilgan  1 - "
+"maktabIxtisoslashgan <span class='green'>“Rivojlantirish”</span> <br/> "
+"maktabi samarqand shahrining sakkizinchi ko‘rinishining <br/> 1 (VIII) raqami"
 
 #: .\templates\index.html:79
 msgid ""
@@ -78,7 +79,7 @@ msgstr "Yangilangan"
 
 #: .\templates\index.html:195
 msgid "Учатся в нашей школе"
-msgstr "Nafar bola maktabda o`qiydi"
+msgstr "Nafar bola maktabda ta'lim olishadi"
 
 #: .\templates\index.html:197
 msgid "Учеников"
@@ -86,7 +87,7 @@ msgstr "O`quvchilar"
 
 #: .\templates\index.html:202
 msgid "Учат в нашей школе"
-msgstr "Maktabimizda ilm olishadi"
+msgstr "Maktabimizda Faoliyat olib borishadi"
 
 #: .\templates\index.html:204
 msgid "Педагогов"
@@ -115,6 +116,10 @@ msgstr "Bizning <br/> o`qituvchilar"
 #: .\templates\index.html:262
 msgid "Частые вопросы"
 msgstr "Ommaviy savollar"
+
+#: .\templates\index.html:298
+msgid "Свяжитесь с нами"
+msgstr "Biz bilan bog`laning"
 
 #: .\templates\index.html:300
 msgid ""
