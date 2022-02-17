@@ -26,7 +26,7 @@ class MainBlock(models.Model):
 class News(models.Model):
     title = models.CharField(max_length=120, null=True)
     picture = models.ImageField(upload_to="news/", null=True)
-    text = models.TextField(max_length=450, null=True, )
+    text = models.TextField(max_length=210, null=True, )
     date_created = models.DateTimeField(null=True)
 
     def __str__(self):
