@@ -50,8 +50,6 @@ msgid ""
 msgstr ""
 "Samarqand shahrining (VII)sakkizinchi ko`rinishdagi ixtisoslashgan <span "
 "class='green'>\"Rivojlantirish\"</span> <br/> ga qaratilgan  1 - "
-"maktabIxtisoslashgan <span class='green'>“Rivojlantirish”</span> <br/> "
-"maktabi samarqand shahrining sakkizinchi ko‘rinishining <br/> 1 (VIII) raqami"
 
 #: .\templates\index.html:79
 msgid ""
