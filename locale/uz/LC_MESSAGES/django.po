@@ -49,7 +49,7 @@ msgid ""
 "номер 1 (VIII) восьмого вида города <br/> Самарканда"
 msgstr ""
 "Samarqand shahrining (VII)sakkizinchi ko`rinishdagi ixtisoslashgan <span "
-"class='green'>\"Rivojlantirish\"</span> <br/> ga qaratilgan  1 - "
+"class='green'>\"Rivojlantirish\"</span> <br/> ga qaratilgan  1 - maktab "
 
 #: .\templates\index.html:79
 msgid ""
