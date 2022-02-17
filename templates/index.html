@@ -89,10 +89,6 @@
             <div class="content-item">
                 <div class="content-text">
                     {{ main_block.about_school_text_1|safe }}
-                    {#                    <span class="green">В течение последних лет</span> уделяется большое внимание трудовому и#}
-                    {#                    профессиональному обучению учащихся с ограниченными умственными возможностями, подготовки их#}
-                    {#                    самостоятельной жизни социализации в обществе и приобретению практических трудовых навыков и#}
-                    {#                    профессий принося щих пользу своим семьям и государству.#}
                 </div>
                 <div class="content-img">
                     <img src="{{ main_block.about_school_picture_1.url }}" alt="about1"/>
@@ -104,9 +100,6 @@
                 </div>
                 <div class="content-text">
                     {{ main_block.about_school_text_2|safe }}
-                    {#                    <span class="green">Во второй половине дня</span> в школе работает 14 кружков по интересам,которые#}
-                    {#                    проводят воспитатели ГПД. Так же проводятся кружки, которые увеличивают интерес к учебному предмету#}
-                    {#                    и улучшают качество знаний учащихся.#}
                 </div>
             </div>
         </div>
@@ -119,8 +112,6 @@
             <h2 class="title">{% trans "История школы" %}</h2>
             <p class="text">
                 {{ main_block.history_of_school }}
-                {#                Год основания - 1982. За годы существования школы было произведено 37 выпусков учащихся школы. В 2016#}
-                {#                году школа переведена в новое здание по адресу улица Наиман, дом 26.#}
             </p>
         </div>
     </div>
@@ -145,47 +136,20 @@
 {#                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">#}
                     <img src="{{ im.url }}" alt="firstNew"/>
                 {% endthumbnail %}
-{#                <img src="{{ new.picture.url }}" alt="firstNew"/>#}
                 <p class="itemData">{{ new.date_created|date:"d.m.Y" }}</p>
                 <p class="item-text">
                     {{ new.text }}
-
-{#                    It is a long established fact that a reader will be distracted by#}
-{#                    the readable content of a page when looking at its layout. The#}
-{#                    point of using Loremke readable Eng#}
                 </p>
             </div>
 
             {% endfor %}
-
-
-{#            <div class="news-item">#}
-{#                <img src="{% static "img/Rectangle 10new1.jpg" %}" alt="secondNew"/>#}
-{#                <p class="itemData">20.01.2022</p>#}
-{#                <p class="item-text">#}
-{#                    It is a long established fact that a reader will be distracted by#}
-{#                    the readable content of a page when looking at its layout. The#}
-{#                    point of using Loremke readable Eng#}
-{#                </p>#}
-{#            </div>#}
-{##}
-{#            <div class="news-item">#}
-{#                <img src="{% static "img/Rectangle 10new1.jpg" %}" alt="therdNew"/>#}
-{#                <p class="itemData">20.01.2022</p>#}
-{##}
-{#                <p class="item-text">#}
-{#                    It is a long established fact that a reader will be distracted by#}
-{#                    the readable content of a page when looking at its layout. The#}
-{#                    point of using Loremke readable Eng#}
-{#                </p>#}
-{#            </div>#}
         </div>
     </div>
 </section>
 <div id="events"></div>
 <section class="events">
     <div class="container">
-        <h2 class="title">События</h2>
+        <h2 class="title">{% trans "События" %}</h2>
     </div>
     <div class="events-slider">
         <div style="
@@ -377,18 +341,20 @@
                     <a href="tel:+998906560874" class="footer__link">+998906560874</a>
                 </div>
                 <div class="navMenu">
-                    <a href="#questions" class="footer__link scroll-to">Вопросы</a>
-                    <a href="#events" class="footer__link scroll-to">События</a>
-                    <a href="#contacts" class="footer__link scroll-to">Контакты</a>
+                    <a href="#questions" class="footer__link scroll-to">{% trans "Вопросы" %}</a>
+                    <a href="#events" class="footer__link scroll-to">{% trans "События" %}</a>
+                    <a href="#contacts" class="footer__link scroll-to">{% trans "Контакты" %}</a>
                 </div>
             </div>
             <div class="bottom">
                 <div class="documentation">
-                    <a href="#" class="footer__link">Политика конфеденциальности</a>
-                    <a href="https://lcode.uz/" class="footer__link">Сайт разработан в 2022 году <br> by liberty code</a>
+                    <a href="#" class="footer__link">{% trans "Политика конфеденциальности" %}</a>
+                    <a href="https://lcode.uz/" class="footer__link">
+                        {% trans "Сайт разработан в 2022 году" %} <br> by Liberty Code
+                    </a>
                 </div>
                 <div class="adress">
-                    <p class="footer__link">улица Наиман 26<br> ориентир: институт сельхоз</p>
+                    <p class="footer__link">{% trans "улица Наиман 26<br> ориентир: институт сельхоз" %}</p>
                 </div>
             </div>
         </div>

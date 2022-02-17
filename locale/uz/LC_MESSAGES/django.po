@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-14 15:47+0500\n"
+"POT-Creation-Date: 2022-02-17 22:54+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,137 +20,153 @@ msgstr ""
 
 #: .\templates\index.html:24
 msgid "О нас"
-msgstr "About Us"
+msgstr "Biz haqimizda"
 
-#: .\templates\index.html:25 .\templates\index.html:135
+#: .\templates\index.html:25 .\templates\index.html:126
 msgid "Новости"
-msgstr "News"
+msgstr "Yangiliklar"
 
-#: .\templates\index.html:26
+#: .\templates\index.html:26 .\templates\index.html:152
+#: .\templates\index.html:345
 msgid "События"
-msgstr "Events"
+msgstr "Xabarlar"
 
 #: .\templates\index.html:27
 msgid "Педагоги"
-msgstr "Teachers"
+msgstr "O`qituvchilar"
 
-#: .\templates\index.html:28
+#: .\templates\index.html:28 .\templates\index.html:344
 msgid "Вопросы"
-msgstr "Questions"
+msgstr "Savollar"
 
-#: .\templates\index.html:29 .\templates\index.html:334
+#: .\templates\index.html:29 .\templates\index.html:298
+#: .\templates\index.html:346
 msgid "Контакты"
-msgstr "Contacts"
+msgstr "Raqamlar"
 
 #: .\templates\index.html:75
 msgid ""
 "Специализированная <span class='green'>“коррекционная”</span> <br/> школа "
 "номер 1 (VIII) восьмого вида города <br/> Самарканда"
 msgstr ""
+"Ixtisoslashgan <span class='green'>“Rivojlantirish”</span> <br/> maktabi "
+"samarqand shahrining sakkizinchi ko‘rinishining <br/> 1 (VIII) raqami"
 
 #: .\templates\index.html:79
 msgid ""
 "Школа для детей с особыми образовательными потребностями. Работаем с 1982 "
 "года"
 msgstr ""
+"Maxsus ta'limga muhtoj bolalar uchun maktab. \"1982 yildan\" boshlab "
+"faoliyat olib boramiz "
 
 #: .\templates\index.html:81
 msgid "Подробнее"
-msgstr ""
+msgstr "Tafsilotlar"
 
 #: .\templates\index.html:87
 msgid "О школе"
-msgstr ""
+msgstr "Maktab haqida"
 
-#: .\templates\index.html:119
+#: .\templates\index.html:112
 msgid "История школы"
-msgstr ""
+msgstr "Maktab Tarixi"
 
-#: .\templates\index.html:136
+#: .\templates\index.html:127
 msgid "Обновлено"
-msgstr ""
+msgstr "Yangilangan"
 
-#: .\templates\index.html:231
+#: .\templates\index.html:195
 msgid "Учатся в нашей школе"
-msgstr ""
+msgstr "Nafar bola maktabda o`qiydi"
 
-#: .\templates\index.html:233
+#: .\templates\index.html:197
 msgid "Учеников"
-msgstr ""
+msgstr "O`quvchilar"
 
-#: .\templates\index.html:238
+#: .\templates\index.html:202
 msgid "Учат в нашей школе"
-msgstr ""
+msgstr "Maktabimizda ilm olishadi"
 
-#: .\templates\index.html:240
-#, fuzzy
-#| msgid "Педагоги"
+#: .\templates\index.html:204
 msgid "Педагогов"
-msgstr "Teachers"
+msgstr "O`qituvchilar"
 
-#: .\templates\index.html:247
+#: .\templates\index.html:211
 msgid "Есть в нашей школе"
-msgstr ""
+msgstr "Maktabimizda bor"
 
-#: .\templates\index.html:249
+#: .\templates\index.html:213
 msgid "Кабинетов"
-msgstr ""
+msgstr "Sinf Xonalar"
 
-#: .\templates\index.html:254
+#: .\templates\index.html:218
 msgid "Программ обучения"
-msgstr ""
+msgstr "Ta`lim fanlari"
 
-#: .\templates\index.html:256
+#: .\templates\index.html:220
 msgid "Программ"
-msgstr ""
+msgstr "Darsliklar"
 
-#: .\templates\index.html:266
-#, fuzzy
-#| msgid "Педагоги"
+#: .\templates\index.html:230
 msgid "Наши <br/> педагоги"
-msgstr "Teachers"
+msgstr "Bizning <br/> o`qituvchilar"
 
-#: .\templates\index.html:298
-#, fuzzy
-#| msgid "Вопросы"
+#: .\templates\index.html:262
 msgid "Частые вопросы"
-msgstr "Questions"
+msgstr "Ommaviy savollar"
 
-#: .\templates\index.html:336
+#: .\templates\index.html:300
 msgid ""
 "Остались вопросы? оставьте свои данные чтобы мы могли связаться с вами и "
 "ответить на ваши вопросы!"
 msgstr ""
+"Yana savollar bormi? O`zingiz haqingizda ma`lumot qoldiring. Siz bilan "
+"bog`lanish va savollaringizga javob berishimiz uchun!"
 
-#: .\templates\index.html:342
+#: .\templates\index.html:307
 msgid "Введите ваше имя"
-msgstr ""
+msgstr "Ismingizni kiriting"
 
-#: .\templates\index.html:343
+#: .\templates\index.html:308
 msgid "Введите ваш email"
-msgstr ""
+msgstr "Emailingizni kiriting"
 
-#: .\templates\index.html:344
+#: .\templates\index.html:309
 msgid "Введите ваш номер"
-msgstr ""
+msgstr "Telefon raqamingizni kiriting"
 
-#: .\templates\index.html:346
+#: .\templates\index.html:311
 msgid "Введите ваше сообщение"
-msgstr ""
+msgstr "Xabaringizni kiriting"
 
-#: .\templates\index.html:348
+#: .\templates\index.html:313
 msgid "Подтвердить"
-msgstr ""
+msgstr "Tasdiqlash"
 
-#: .\templates\index.html:349
+#: .\templates\index.html:314
 msgid "Отменить"
-msgstr ""
+msgstr "Bekor qilish"
 
-#: .\templates\index.html:367
+#: .\templates\index.html:332
 msgid ""
 "Специализированная «коррекционная» школа номер 1 (VIII) восьмого вида города "
 "самарканда"
 msgstr ""
+"Samarqand shaharining 1 (VIII) raqami ostidagi ixtisoslashgan "
+"“Rivojlantirish” maktabi "
+
+#: .\templates\index.html:351
+msgid "Политика конфеденциальности"
+msgstr "Maxfiylik siyosati"
+
+#: .\templates\index.html:353
+msgid "Сайт разработан в 2022 году"
+msgstr "Sayt 2022 yilda yaratilgan"
+
+#: .\templates\index.html:357
+msgid "улица Наиман 26<br> ориентир: институт сельхоз"
+msgstr "Nayman ko`chasi  26 <br>  Samarqand Veterenariya instituti yonida"
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:7
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:221
