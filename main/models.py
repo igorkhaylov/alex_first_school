@@ -26,8 +26,8 @@ class MainBlock(models.Model):
 class News(models.Model):
     title = models.CharField(max_length=120, null=True)
     picture = models.ImageField(upload_to="news/", null=True)
-    text = models.TextField(max_length=450, null=True, )
-    date_created = models.DateTimeField(auto_now_add=True, null=True)
+    text = models.TextField(max_length=210, null=True, )
+    date_created = models.DateTimeField(null=True)
 
     def __str__(self):
         return self.title
@@ -63,7 +63,7 @@ class Teachers(models.Model):
     class Meta:
         verbose_name = "Учитель"
         verbose_name_plural = "Учителя"
-        ordering = ["-id", ]
+        ordering = ["id", ]
 
 
 class Questions(models.Model):

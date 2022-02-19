@@ -12,7 +12,7 @@ class MainBlockAdmin(TranslationAdmin):
 @admin.register(News)
 class NewsAdmin(TranslationAdmin):
     list_display = ("title", )
-    readonly_fields = ("date_created", )
+    # readonly_fields = ("date_created", )
 
     save_as = True
 
