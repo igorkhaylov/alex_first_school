@@ -56,6 +56,7 @@ class Teachers(models.Model):
     name = models.CharField(max_length=120, null=True)
     description = models.CharField(max_length=250, null=True)
     picture = models.ImageField(upload_to="teachers/", null=True)
+    level = models.SmallIntegerField(default=0, null=True)
 
     def __str__(self):
         return self.name
@@ -63,7 +64,7 @@ class Teachers(models.Model):
     class Meta:
         verbose_name = "Учитель"
         verbose_name_plural = "Учителя"
-        ordering = ["id", ]
+        ordering = ["-level", ]
 
 
 class Questions(models.Model):

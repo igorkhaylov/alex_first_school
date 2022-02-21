@@ -11,11 +11,13 @@ def index(request):
     questions = Questions.objects.all()
 
     last_updated = News.objects.first()
+
     if request.method == "POST":
         name = request.POST["name"]
         email = request.POST["email"]
         phone_number = request.POST["phone"]
         text = request.POST["comment"]
+
         mes = "\tИмя отправителя: \n" + name + \
               "\n\n\tE-mail отправителя: \n" + email + \
               "\n\n\tНомер телефона: \n" + phone_number + \
