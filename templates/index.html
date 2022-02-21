@@ -4,6 +4,31 @@
 
 <head>
 
+
+    <meta name="description"
+          content="Специализированная “коррекционная” школа номер 1 (VIII) восьмого вида города Самарканда"/>
+    <meta name="keywords" content=""/>
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="школа номер 1 (VIII)"/>
+    <meta property="og:url" content="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}"/>
+    <meta property="og:site_name" content="First School"/>
+    <meta property="og:description"
+          content="Специализированная “коррекционная” школа номер 1 (VIII) восьмого вида города Самарканда"/>
+
+    <meta property="og:image"
+          content="{{ request.scheme }}://{{ request.get_host }}{% static "img/MainFirstSchool.jpg" %}"/>
+    <meta property="og:image:type" content="image/jpg"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="675"/>
+    <meta property="og:image:alt" content="{{ first_slide.name }}">
+
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="школа номер 1 (VIII)"/>
+    <meta name="twitter:url" content="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}"/>
+    <meta name="twitter:image"
+          content="{{ request.scheme }}://{{ request.get_host }}{% static "img/MainFirstSchool.jpg" %}"/>
+
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
