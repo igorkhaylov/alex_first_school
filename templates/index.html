@@ -162,6 +162,13 @@
 {#                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">#}
                     <img src="{{ im.url }}" alt="firstNew"/>
                 {% endthumbnail %}
+            <img src="{% static "img/click.svg" %}" alt="click" style="
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 32px;
+    height: 32px;
+">
                 <p class="itemData">{{ new.date_created|date:"d.m.Y" }}</p>
                 <p class="item-text">
                     {{ new.text }}
