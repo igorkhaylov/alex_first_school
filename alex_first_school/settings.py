@@ -15,7 +15,9 @@ SECRET_KEY = 'django-insecure-o**or2#t8e*ef2o)($k3y@+0ip-0$_^$-@j#4z9b2#3c&ne_%o
 DEBUG = True
 from .prod_settings import *
 
-ALLOWED_HOSTS = ["first-school.lcode.uz", "*"]
+ALLOWED_HOSTS = ["1maxsusvxtb.uz", 
+                #  "*",
+                 ]
 
 
 # Application definition
@@ -125,8 +127,8 @@ LOCALE_PATHS = (os.path.join(BASE_DIR, 'locale'), )
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
